@@ -3,6 +3,8 @@ import React, { useContext } from "react";
 import GetIcon from "../components/GetIcon";
 import { MenuContext } from "@/context/MenuContext";
 import Image from "next/image";
+import UserAreaSelectBox from "@/components/UserAreaSelectBox";
+
 
 const MainHeader = () => {
   const { toggle } = useContext(MenuContext);
@@ -16,7 +18,9 @@ const MainHeader = () => {
         <div onClick={toggle} className="lg:hidden">
           <GetIcon name="HiBars3" className="cursor-pointer" />
         </div>
-        <div>User Area</div>
+        <div>
+          <UserAreaSelectBox/>
+        </div>
       </div>
     </div>
   );

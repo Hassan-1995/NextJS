@@ -2,16 +2,11 @@
 import GetIcon from "@/components/GetIcon";
 import React, { useState } from "react";
 
-const cities = [
-  "Karachi",
-  "Islamabad",
-  "Lahore",
-  "Quetta",
-  "Peshawar",
-  "Multan",
-];
+interface CustomSelectBoxProps {
+  items: string[];
+}
 
-const CustomSelectBox = () => {
+const CustomSelectBox = ({ items }: CustomSelectBoxProps) => {
   const [selectedCity, setSelectedCity] = useState("Please select city");
   const [open, setOpen] = useState(false);
 
@@ -31,7 +26,7 @@ const CustomSelectBox = () => {
             open ? "opacity-100 h-auto" : "opacity-0 h-0 "
           } transition-all duration-200 overflow-hidden absolute top-16 left-0`}
         >
-          {cities.map((item) => (
+          {items.map((item) => (
             <div
               onClick={() => {
                 setSelectedCity(item);
@@ -55,7 +50,9 @@ const CustomSelectBox = () => {
       </div>
       <div
         onClick={() => setOpen(false)}
-        className={`bg-sky-100 fixed inset-0 opacity-50 z-0 ${open? "block": "hidden"}`}
+        className={`bg-sky-100 fixed inset-0 opacity-50 z-0 ${
+          open ? "block" : "hidden"
+        }`}
       ></div>
     </>
   );
