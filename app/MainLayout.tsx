@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import Link from "next/link";
 
 import MainHeader from "./MainHeader";
-import GetIcon from "./GetIcon";
+import GetIcon from "../components/GetIcon";
 import { MenuContext } from "@/context/MenuContext";
 
 interface Props {
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const MainLayout = ({ children }: Props) => {
-  const { open  } = useContext(MenuContext);
+  const { open } = useContext(MenuContext);
 
   return (
     <div className="bg-gray-200 w-screen min-h-screen">
@@ -27,7 +27,15 @@ const MainLayout = ({ children }: Props) => {
           <ul>
             <li className="flex justify-start items-center rounded-xl p-3 hover:bg-secondary ">
               <GetIcon name="HiOutlineHome" className="mr-2" />
-              <Link href="/" className="flex-1">Home</Link>
+              <Link href="/" className="flex-1">
+                Home
+              </Link>
+            </li>
+            <li className="flex justify-start items-center rounded-xl p-3 hover:bg-secondary ">
+              <GetIcon name="HiOutlineUsers" className="mr-2" />
+              <Link href="/users" className="flex-1">
+                Users
+              </Link>
             </li>
             <li className="flex justify-start items-center rounded-xl p-4 hover:bg-secondary ">
               <GetIcon name="HiOutlineSquares2X2" className="mr-2" />
@@ -36,17 +44,47 @@ const MainLayout = ({ children }: Props) => {
               </Link>
               <GetIcon name="HiChevronDoubleRight" className="mr-2" />
             </li>
+
+            <li className="flex flex-col justify-start items-start rounded-xl p-4 hover:bg-secondary ">
+              <div className="w-full flex flex-row justify-start items-center">
+                <GetIcon name="HiOutlineInbox" className="mr-2" />
+                <Link href="/" className="flex-1">
+                  Singular
+                </Link>
+                <GetIcon name="HiChevronDoubleRight" className="mr-2" />
+              </div>
+              <ul className="ml-8 mt-4">
+                <li className="flex justify-center items-center gap-4">
+                  <GetIcon name="HiOutlineArrowRightCircle" />
+                  <Link href="/singular/selectbox">Select Box </Link>
+                </li>
+              </ul>
+            </li>
+
+            <li className="flex justify-start items-center rounded-xl p-4 hover:bg-secondary ">
+              <GetIcon name="HiOutlineInboxStack" className="mr-2" />
+              <Link href="/" className="flex-1">
+                Complex
+              </Link>
+              <GetIcon name="HiChevronDoubleRight" className="mr-2" />
+            </li>
             <li className="flex justify-start items-center rounded-xl p-4 hover:bg-secondary ">
               <GetIcon name="HiOutlineInformationCircle" className="mr-2" />
-              <Link href="/about_us" className="flex-1">About Us</Link>
+              <Link href="/about_us" className="flex-1">
+                About Us
+              </Link>
             </li>
             <li className="flex justify-start items-center rounded-xl p-4 hover:bg-secondary ">
               <GetIcon name="HiOutlineCog6Tooth" className="mr-2" />
-              <Link href="/services" className="flex-1">Services</Link>
+              <Link href="/services" className="flex-1">
+                Services
+              </Link>
             </li>
             <li className="flex justify-start items-center rounded-xl p-4 hover:bg-secondary ">
               <GetIcon name="HiOutlinePhone" className="mr-2" />
-              <Link href="/contact_us" className="flex-1">Contacts</Link>
+              <Link href="/contact_us" className="flex-1">
+                Contacts
+              </Link>
             </li>
           </ul>
         </aside>
