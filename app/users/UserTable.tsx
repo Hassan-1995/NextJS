@@ -24,8 +24,8 @@ const UserTable = async ({ sortOrder }: Props) => {
   );
 
   return (
-    <div className='overflow-scroll'>
-      <table className='min-w-full bg-white border border-gray-200'>
+    <div className='w-64'>
+      <table className='bg-white border border-gray-200'>
         <thead>
           <tr className='bg-secondary'>
             <th className='px-4 py-2 text-left text-sm font-bold text-white'>

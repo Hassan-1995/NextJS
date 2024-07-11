@@ -1,18 +1,17 @@
 "use client";
+import "/node_modules/flag-icons/css/flag-icons.min.css";
 import GetIcon from "@/components/GetIcon";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const actions = [
-  { id: 1, label: "User Dashboard", route: "/users/dashboard" },
-  { id: 2, label: "Transactions", route: "/users/transactions" },
-  { id: 3, label: "Orders", route: "/users/orders" },
-  { id: 4, label: "Friends", route: "/users/friends" },
-  { id: 5, label: "Log Out", route: "/auth/logout" },
+const languages = [
+  { id: 1, flag: "fi fi-us", lang: "English", route: "/en" },
+  { id: 2, flag: "fi fi-ir", lang: "Farsi", route: "/fa" },
+  { id: 3, flag: "fi fi-pk", lang: "Urdu", route: "/ur" },
 ];
 
-const UserAreaSelectBox = () => {
-  const [selectedArea, setSelectedArea] = useState("User Area");
+const UserLanguageSelectBox = () => {
+  const [selectedLanguage, setSelectedLanguage] = useState("");
   const [open, setOpen] = useState(false);
 
   return (
@@ -22,8 +21,12 @@ const UserAreaSelectBox = () => {
           onClick={() => setOpen((prev) => !prev)}
           className=" p-2 cursor-pointer"
         >
-          <span className="border-2 border-blue-600 p-1 rounded-lg">
-            {selectedArea}
+          <span className="text-2xl">
+            {selectedLanguage === "" ? (
+              <GetIcon name="HiOutlineGlobeAlt" />
+            ) : (
+              <span className={`text-xl ${selectedLanguage}`}></span>
+            )}
           </span>
         </div>
 
@@ -32,16 +35,22 @@ const UserAreaSelectBox = () => {
             open ? "opacity-100 h-auto" : "opacity-0 h-0 "
           } transition-all duration-200 overflow-hidden absolute top-12 right-0`}
         >
-          {actions.map((item) => (
+          {languages.map((item) => (
             <div
               key={item.id}
-              onClick={() => { 
+              onClick={() => {
                 setOpen(false);
-                setSelectedArea(item.label)
+                setSelectedLanguage(item.flag);
               }}
               className={`flex justify-start items-center gap-x-2 px-2 py-1 hover:bg-orange-100 cursor-pointer`}
             >
-              <Link href={item.route}>{item.label}</Link>
+              <Link
+                href={item.route}
+                className="justify-between flex-1 flex items-center"
+              >
+                <span className={`flag-icon ${item.flag}`} />
+                <span className="ml-2">{item.lang}</span>
+              </Link>
             </div>
           ))}
         </div>
@@ -56,4 +65,4 @@ const UserAreaSelectBox = () => {
   );
 };
 
-export default UserAreaSelectBox;
+export default UserLanguageSelectBox;
