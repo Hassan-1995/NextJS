@@ -1,5 +1,5 @@
-import CustomSelectBox from '@/components/CustomSelectBox'
-import React from 'react'
+import CustomSelectBox from "@/components/CustomSelectBox";
+import React from "react";
 
 const cities = [
   "Karachi",
@@ -12,12 +12,12 @@ const cities = [
 
 const SelectBoxPage = () => {
   return (
-    <div className='bg-white rounded-lg mx-4 p-4'>
-        <h1>This is selct box page</h1>
-        <br/>
-        <CustomSelectBox items={cities} />
+    <div className="bg-white rounded-lg mx-4 p-4">
+      <h1>This is selct box page</h1>
+      <br />
+      <CustomSelectBox items={cities} />
     </div>
-  )
-}
+  );
+};
 
-export default SelectBoxPage
+export default SelectBoxPage;

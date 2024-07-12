@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const AboutUsPage = () => {
-  return (
-    <div>About Us Page</div>
-  )
-}
+  return <div className="bg-white rounded-lg mx-4 p-4">About Us Page</div>;
+};
 
-export default AboutUsPage
+export default AboutUsPage;

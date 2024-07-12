@@ -10,7 +10,7 @@ interface Props {
 
 const UsersPage = async ({ searchParams: { sortOrder } }: Props) => {
   return (
-    <div>
+    <div className="bg-white rounded-lg mx-4 p-4">
       <h1 className="font-extrabold text-2xl">Users</h1>
       <Suspense fallback={<p>Loading...</p>}>
         <UserTable sortOrder={sortOrder} />

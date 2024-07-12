@@ -24,7 +24,9 @@ const UserTable = async ({ sortOrder }: Props) => {
   );
 
   return (
-    <div className='w-64'>
+    <div className='w-fit'>
+    {/* <div className='w-screen'> */}
+    {/* <div className="bg-white rounded-lg mx-4 p-4"> */}
       <table className='bg-white border border-gray-200'>
         <thead>
           <tr className='bg-secondary'>
