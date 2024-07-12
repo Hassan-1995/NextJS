@@ -1,8 +1,9 @@
 "use client";
+import React, { useState } from "react";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
+
 import GetIcon from "@/components/GetIcon";
 import Link from "next/link";
-import React, { useState } from "react";
 
 const languages = [
   { id: 1, flag: "fi fi-us", lang: "English", route: "/en" },
@@ -55,12 +56,12 @@ const UserLanguageSelectBox = () => {
           ))}
         </div>
       </div>
-      <div
+      {/* <div
         onClick={() => setOpen(false)}
         className={`bg-sky-100 fixed inset-0 opacity-50 z-0 ${
           open ? "block" : "hidden"
         }`}
-      ></div>
+      ></div> */}
     </>
   );
 };

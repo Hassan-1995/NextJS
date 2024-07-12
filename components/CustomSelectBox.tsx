@@ -48,12 +48,12 @@ const CustomSelectBox = ({ items }: CustomSelectBoxProps) => {
           ))}
         </div>
       </div>
-      <div
+      {/* <div
         onClick={() => setOpen(false)}
-        className={`bg-sky-100 fixed inset-0 opacity-50 z-0 ${
+        className={`bg-sky-900 w-screen h-screen fixed inset-0 opacity-50 z-0 ${
           open ? "block" : "hidden"
         }`}
-      ></div>
+      ></div> */}
     </>
   );
 };

@@ -1,5 +1,4 @@
 "use client";
-import GetIcon from "@/components/GetIcon";
 import Link from "next/link";
 import React, { useState } from "react";
 
@@ -46,12 +45,12 @@ const UserAreaSelectBox = () => {
           ))}
         </div>
       </div>
-      <div
+      {/* <div
         onClick={() => setOpen(false)}
         className={`bg-sky-100 fixed inset-0 opacity-50 z-0 ${
           open ? "block" : "hidden"
         }`}
-      ></div>
+      ></div> */}
     </>
   );
 };

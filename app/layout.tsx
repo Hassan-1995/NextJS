@@ -1,6 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import MainLayout from "./MainLayout";
+import MainLayout from "./layoutSection/MainLayout";
 import MenuContextProvider from "@/context/MenuContext";
 
 export const metadata: Metadata = {

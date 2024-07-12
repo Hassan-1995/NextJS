@@ -1,7 +1,8 @@
 "use client";
 import React, { useContext } from "react";
-import GetIcon from "../components/GetIcon";
+
 import { MenuContext } from "@/context/MenuContext";
+import GetIcon from "../../components/GetIcon";
 import Image from "next/image";
 import UserAreaSelectBox from "@/components/UserAreaSelectBox";
 import UserLanguageSelectBox from "@/components/UserLanguageSelectBox";
@@ -22,7 +23,7 @@ const MainHeader = () => {
       </div>
       <div className="flex justify-center items-center gap-4">
         <div>
-          <UserLanguageSelectBox/>
+          <UserLanguageSelectBox />
         </div>
         <div onClick={toggle} className="lg:hidden">
           <GetIcon name="HiBars3" className="cursor-pointer" />

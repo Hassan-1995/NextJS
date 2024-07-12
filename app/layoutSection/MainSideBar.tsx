@@ -1,20 +1,13 @@
-"use client";
 import React, { useContext } from "react";
 import Link from "next/link";
 
-import MainHeader from "./MainHeader";
-import GetIcon from "../components/GetIcon";
 import { MenuContext } from "@/context/MenuContext";
+import GetIcon from "@/components/GetIcon";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const MainLayout = ({ children }: Props) => {
+const MainSideBar = () => {
   const { open, toggle } = useContext(MenuContext);
-
   return (
-    <div className="bg-gray-200 min-h-screen">
+    <div>
       <aside
         className={`h-screen mr-5 text-white top-4 lg:fixed lg:block lg:top-16 lg:left-0 bg-primary rounded-e-xl overflow-hidden transition-all duration-100 ${
           open ? "w-60 p-4 block fixed" : "w-0 hidden"
@@ -23,7 +16,10 @@ const MainLayout = ({ children }: Props) => {
         <ul>
           <li className="flex justify-end items-center rounded-xl p-3 lg:hidden ">
             <Link href="/" onClick={toggle}>
-            <GetIcon name="HiOutlineXCircle" className="mr-2 hover:text-red-600" />
+              <GetIcon
+                name="HiOutlineXCircle"
+                className="mr-2 hover:text-red-600"
+              />
             </Link>
           </li>
           <li className="flex justify-start items-center rounded-xl p-3 hover:bg-secondary ">
@@ -91,12 +87,8 @@ const MainLayout = ({ children }: Props) => {
           </li>
         </ul>
       </aside>
-      <div className={`${open ? "blur-xl md:blur-0 lg:blur-0" : "blur-0"}`}>
-        <MainHeader />
-        <main className="lg:ml-64">{children}</main>
-      </div>
     </div>
   );
 };
 
-export default MainLayout;
+export default MainSideBar;
